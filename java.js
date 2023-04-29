@@ -20,16 +20,8 @@ function generateButtons() {
           }
 
            // Define a function that at click of the new button will show its status
-          newButton.addEventListener('click', function() {
-            const buttonStatus = this.dataset.status;
-            let message;
-            if (buttonStatus === "winner") {
-              message = "Winner!";
-            } else {
-              message = "Loser!";
-            }
-            messageContainer.innerText = message;
-          });
+           newButton.addEventListener('click', handleButtonClick);
+           
     }
 
     // We get rid of the input box and the generator button
@@ -37,4 +29,14 @@ function generateButtons() {
     document.getElementById("buttonId").style.display = "none";
 }
 
+function handleButtonClick() {
+    const buttonStatus = this.dataset.status;
+    let message;
+    if (buttonStatus === "winner") {
+        message = "Winner!";
+    } else {
+        message = "Loser!";
+    }
+    messageContainer.innerText = message;
+}
 
